@@ -10,8 +10,8 @@
     // console.log(`the result is ${a * b}`)
 // }
 
-doMoreMath = (a, b) => a * b
-console.log(doMoreMath(20, 30))
+// doMoreMath = (a, b) => a * b
+// console.log(doMoreMath(20, 30))
 
 // const result = doMath(10, 4)
 // console.log(`result was returned from the function ${result}`)
@@ -22,11 +22,8 @@ console.log(doMoreMath(20, 30))
 
 
 // == My Functions == //
-
-// function sleepAverage (c, d) {
-//     let average = c / d
-//     return average
-// }
+sleepAverage = (c, d) => c / d
+console.log(sleepAverage(35, 5))
 
 // const average = sleepAverage(35, 5) 
 // console.log(`result of average hours slept during work week ${average}`)
