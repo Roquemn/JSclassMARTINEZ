@@ -1,0 +1,7 @@
+# Week 7
+---
+
+## Are you using devTools?
+
+It find myself using devTools a lot more now than I ever did while taking the intro to web classes. It's very helpful having the ability to breakdown your code and functions and seeing them work line by line. I have to admit that at the beginning it can be very intimidating and sometimes hard to know where to look but watching the videos helps me ease in into using the necessary features.
+
