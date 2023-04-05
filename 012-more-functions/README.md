@@ -8,3 +8,7 @@ It find myself using devTools a lot more now than I ever did while taking the in
 ## Does the Array concept make sense?
 
 I have to admit that I am struggling a bit with seeing the whole picture when it comes to arrays but I think I am beginning to grasp the general idea, basically arrays are objects with data inside of them. I hope that with more hands-on practice, I can understand them a bit better. So far so good, taking it slow.
+
+## Fixing the issues after Array example?
+
+Honestly I was not able to recognize the issue sorry.
