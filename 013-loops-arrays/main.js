@@ -29,6 +29,8 @@ const calculateMPGAvg = () => {
 }
 
 //calculateAvgCost
+// ^^^ tried but struggled quite a bit, went back to working code
+
 // commit message "my code for cal average cost"
 // * round average MPG 
 
