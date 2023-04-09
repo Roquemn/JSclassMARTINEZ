@@ -28,16 +28,14 @@ const calculateSUM = (arr) => {
     //     sum += element
     // })
 
-    for(value of arr) {
-        sum += value
-    }
-    // do {
-    //   sum += 1;
-    //   console.log(sum);
-    // } while (sum < 3);
-    
-
-    // return sum
+    // for(value of arr) {
+    //     sum += value
+    // }
+    do {
+      sum += 1;
+      console.log(sum);
+    } while (sum < 3);
+    return sum
 }
 
 const calculateAvg = () => {
