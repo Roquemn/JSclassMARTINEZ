@@ -1,4 +1,5 @@
-// Loops and Arrays
+const FORM = document.getElementById('form-input')
+
 
 const MY_MPG = []
 const MY_TRIP_COST = []
@@ -36,10 +37,14 @@ const calculateAvg = () => {
     updateDOM(`Average Trip is ${avgTripCost}`)
 }
 
-trackMPGandCost(360, 15, 5.40)
-trackMPGandCost(320, 12, 5)
-trackMPGandCost(100, 7, 4.40)
-trackMPGandCost(600, 24, 5.70)
-trackMPGandCost(50, 2, 3)
-trackMPGandCost(320, 12, 5)
-calculateAvg()
+FORM.addEventListener('submit', (e) => {
+    console.log(e)
+})
+
+// trackMPGandCost(360, 15, 5.40)
+// trackMPGandCost(320, 12, 5)
+// trackMPGandCost(100, 7, 4.40)
+// trackMPGandCost(600, 24, 5.70)
+// trackMPGandCost(50, 2, 3)
+// trackMPGandCost(320, 12, 5)
+// calculateAvg()
