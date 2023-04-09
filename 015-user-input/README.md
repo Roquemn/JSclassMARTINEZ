@@ -21,3 +21,7 @@ Now that I am more familiar with the form concept I can actually pick up minor o
 ### What event or function is being listened to in order to calculate user input data?
 
 I believe were listening to the the data, in this case, the trackMPGandCost function. The user inputs the values in the spaces, the event is the submit button, and after that we output the calculated value after the submit button is pressed.
+
+#### Did adding event listeners parseInt and other code make sense?
+
+Still trying to grasp the major concepts, I keep reviewing the same video more than once but my understanding keeps slowing down. The best think I could do for now is do outside research and keep playing with the code until I break it and then somehow find the solution for it. 
