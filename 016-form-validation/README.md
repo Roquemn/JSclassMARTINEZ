@@ -10,5 +10,7 @@ We're comparing the value of the user input to the value in the if, else stateme
 
 1. Clearing error messages once user submission is good
 
+- was not successful at eliminating the error messages once correct data was introduced by user
 
 2. Calculate average
+- still unsure of how to approach this
