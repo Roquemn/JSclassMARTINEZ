@@ -42,8 +42,12 @@ FORM.addEventListener("submit", (e) => {
   const miles = parseInt(e.target.miles.value);
   const gallons = parseInt(e.target.gallons.value);
   const price = parseInt(e.target.price.value);
-  if (miles === 0) {
+  if (miles === 0 || gallons === 0 || price === 0) {
     errMsg.push("Make sure you input value greater than 0!! Try Again");
+  } 
+
+  if (price > 1000) {
+    errMsg.push('Really!!!?? I think this is in error...Try again')
   }
 
   if (errMsg.length > 0) {
