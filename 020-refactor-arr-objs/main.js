@@ -2,11 +2,7 @@ const FORM = document.getElementById("form-input");
 const ERR = document.getElementById("err");
 const AVG_OUTPUT = document.getElementById("output-avg");
 
-// const MY_MPG = [];
-// const MY_TRIP_COST = [];
-
-const MY_DATA = []
-
+const MY_DATA = [];
 
 const updateDOM = (input, id) => {
   const divEl = document.querySelector(id);
@@ -15,49 +11,37 @@ const updateDOM = (input, id) => {
   divEl.appendChild(p);
 };
 
-const trackMPGandCost = (obj) => {
-  const MPG = Math.round(obj.miles / obj.gallons);
-  const tripCost = Math.round(obj.gallons * obj.price);
+const trackMPGandCost = (miles, gallons, price) => {
+  const MPG = Math.round(miles / gallons);
+  const tripCost = Math.round(gallons * price);
   updateDOM(
     `Miles per gallon is ${MPG} and trip cost is ${tripCost}`,
     "#output"
   );
-  obj.MPG = MPG
-  obj.tripCost = tripCost
-  // MY_MPG.push.apply(MPG)
-  // MY_TRIP_COST.push(tripCost);
-  return obj
+  return {
+    MPG: MPG,
+    tripCost: tripCost,
+    miles: miles,
+    gallons: gallons,
+    price: price,
+  };
 };
-
-// const calculateSUM = (arr) => {
-//   let sum = 0;
-//   for (value of arr) {
-//     sum += value;
-//   }
-//   return sum;
-// };
 
 const calculateAvg = () => {
   let sumMPG = 0;
   let sumTripCost = 0;
-  MY_DATA.forEach(obj => {
-    sumMPG =+ obj.MPG
-    sumTripCost =+ obj.tripCost
-  })
-  // let sumMPG = calculateSUM(MY_MPG)
-  // let sumTripCost = calculateSUM(MY_TRIP_COST)
+  MY_DATA.forEach((obj) => {
+    sumMPG = +obj.MPG;
+    sumTripCost = +obj.tripCost;
+  });
   let avgMPG = Math.round(sumMPG / MY_DATA.length);
   let avgTripCost = Math.round(sumTripCost / MY_DATA.length);
   updateDOM(`Average MPG is ${avgMPG}`, "#output-avg");
   updateDOM(`Average Trip Cost is ${avgTripCost}`, "#output-avg");
 };
 
-FORM.addEventListener("submit", (e) => {
-  e.preventDefault();
+const isFormValid = (miles, gallons, price) => {
   const errMsg = [];
-  const miles = parseInt(e.target.miles.value);
-  const gallons = parseInt(e.target.gallons.value);
-  const price = parseInt(e.target.price.value);
   if (miles === 0 || gallons === 0 || price === 0) {
     errMsg.push("Make sure you input value greater than 0!! Try Again");
   }
@@ -66,17 +50,25 @@ FORM.addEventListener("submit", (e) => {
   }
   if (errMsg.length > 0) {
     ERR.textContent = errMsg;
+    return false;
   } else {
-    const newDataObj = {
-      miles: miles,
-      gallons: gallons,
-      price: price
-    }
+    return true;
+  }
+};
+
+FORM.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const miles = parseInt(e.target.miles.value);
+  const gallons = parseInt(e.target.gallons.value);
+  const price = parseInt(e.target.price.value);
+  const isValid = isFormValid(miles, gallons, price);
+  if (isValid) {
     ERR.textContent = "";
     AVG_OUTPUT.textContent = "";
-    const updateDataObj = trackMPGandCost(newDataObj)
-    MY_DATA.push(updateDataObj);
+    const dataObj = trackMPGandCost(miles, gallons, price);
+    MY_DATA.push(dataObj);
     calculateAvg();
   }
+
   FORM.reset();
 });
