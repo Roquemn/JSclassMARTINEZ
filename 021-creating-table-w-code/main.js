@@ -56,6 +56,8 @@ function isFormValid(miles, gallons, price) {
   }
 }
 
+
+
 function renderTable() {
   const tbl = document.createElement("table");
   const headings = [
