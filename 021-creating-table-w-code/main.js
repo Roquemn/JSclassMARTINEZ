@@ -20,11 +20,11 @@ function trackMPGandCost(miles, gallons, price) {
     "#output"
   );
   return {
-    MPG: MPG,
-    tripCost: tripCost,
     miles: miles,
     gallons: gallons,
     price: price,
+    MPG: MPG,
+    tripCost: tripCost,
   };
 }
 
@@ -68,13 +68,22 @@ function renderTable() {
   ];
   const tr = document.createElement("tr");
   headings.forEach(function (heading) {
-    let th = document.createElement('th')
-    th.textContent = heading
-    tr.appendChild(th)
+    let th = document.createElement("th");
+    th.textContent = heading;
+    tr.appendChild(th);
   });
   console.log(tr);
-  tbl.appendChild(tr)
-  TBL_OUTPUT.append(tbl)
+  tbl.appendChild(tr);
+  TBL_OUTPUT.append(tbl);
+  MY_DATA.forEach(function (obj) {
+    const tr = document.createElement("tr");
+    for (key in obj) {
+      let td = document.createElement("td");
+      td.textContent = obj[key];
+      tr.appendChild(td);
+    }
+    tbl.appendChild(tr);
+  });
 }
 
 FORM.addEventListener("submit", (e) => {

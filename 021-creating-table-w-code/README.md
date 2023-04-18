@@ -13,3 +13,7 @@ To render the table, the code will have to be added in the the function "updateD
 #### How do we create the tr with the row, and what are the contents within the row?
 
 Still a bit unsure to be honest!
+
+#### How do we fix the issue where the objects are not align with the headings?
+
+Having a hard time coming up with a solution for this issue.
