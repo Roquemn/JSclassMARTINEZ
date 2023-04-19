@@ -21,3 +21,7 @@ Having a hard time coming up with a solution for this issue.
 #### How can we fix the rendering table issues at the end of the first assignment in Week 10?
 
 I think somewhere in the renderTable function is where we would add code to prevent multiple instances of the table from being created.
+
+#### Final questions here?
+
+I was able to understand a bit of the code's functionality but I am just following along at the moment. 
