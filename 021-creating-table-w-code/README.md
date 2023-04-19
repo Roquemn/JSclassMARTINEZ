@@ -17,3 +17,7 @@ Still a bit unsure to be honest!
 #### How do we fix the issue where the objects are not align with the headings?
 
 Having a hard time coming up with a solution for this issue.
+
+#### How can we fix the rendering table issues at the end of the first assignment in Week 10?
+
+I think somewhere in the renderTable function is where we would add code to prevent multiple instances of the table from being created.

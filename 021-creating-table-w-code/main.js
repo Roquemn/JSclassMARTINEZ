@@ -56,9 +56,7 @@ function isFormValid(miles, gallons, price) {
   }
 }
 
-
-
-function renderTable() {
+function renderTableHeadings() {
   const tbl = document.createElement("table");
   const headings = [
     "Miles Driven:",
@@ -74,9 +72,13 @@ function renderTable() {
     th.textContent = heading;
     tr.appendChild(th);
   });
-  console.log(tr);
   tbl.appendChild(tr);
-  TBL_OUTPUT.append(tbl);
+  return tbl;
+}
+
+function renderTable() {
+  const tbl = renderTableHeadings();
+  TBL_OUTPUT.appendChild(tbl);
   MY_DATA.forEach(function (obj) {
     const tr = document.createElement("tr");
     for (key in obj) {
@@ -84,6 +86,14 @@ function renderTable() {
       td.textContent = obj[key];
       tr.appendChild(td);
     }
+    const btnTD = document.createElement("td");
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "edit";
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "delete";
+    btnTD.appendChild(editBtn);
+    btnTD.appendChild(delBtn);
+    tr.appendChild(btnTD);
     tbl.appendChild(tr);
   });
 }
