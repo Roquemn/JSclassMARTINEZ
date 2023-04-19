@@ -15,10 +15,6 @@ function updateDOM(input, id) {
 function trackMPGandCost(miles, gallons, price) {
   const MPG = Math.round(miles / gallons);
   const tripCost = Math.round(gallons * price);
-  updateDOM(
-    `Miles per gallon is ${MPG} and trip cost is ${tripCost}`,
-    "#output"
-  );
   return {
     miles: miles,
     gallons: gallons,
@@ -29,10 +25,10 @@ function trackMPGandCost(miles, gallons, price) {
 }
 
 function calculateAvg() {
-  const numberOfObj = MY_DATA.length
+  const numberOfObj = MY_DATA.length;
   let sumMPG = 0;
   let sumTripCost = 0;
-  MY_DATA.forEach(obj => {
+  MY_DATA.forEach((obj) => {
     sumMPG += obj.MPG;
     sumTripCost += obj.tripCost;
   });
@@ -45,7 +41,7 @@ function calculateAvg() {
 function isFormValid(miles, gallons, price) {
   const errMsg = [];
   if (miles === 0 || gallons === 0 || price === 0) {
-    errMsg.push("Make sure you input value greater than 0!! Try Again");
+    errMsg.push("Make sure your input value greater than 0!!, Try Again");
   }
   if (price > 1000) {
     errMsg.push("Really!!!?? I think this is in error...Try again");
@@ -83,7 +79,7 @@ function renderEditDelBtn(index) {
   editBtn.textContent = "edit";
   const delBtn = document.createElement("button");
   delBtn.textContent = "delete";
-  // delete eventlistener
+  // delet eventlistener
   // for delete - reference the obj in the array
   // for the current row in the table
   // and delete
@@ -136,6 +132,5 @@ FORM.addEventListener("submit", (e) => {
     renderTable();
     calculateAvg();
   }
-
   FORM.reset();
 });
