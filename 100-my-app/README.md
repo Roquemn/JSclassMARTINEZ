@@ -1,0 +1,3 @@
+# C.R.U.D app Decision Making
+
+For this particular app, I want to be able to decide if I should purchase a game based on it's rating. The ratings will be from 1-10 and the decision to add that particular title to the collection will be based on the title rating being 5 or more. I think using an API I will be able to use data including, Game title, genre, rating and possibly display the artwork. The app will let user use a search field to search for Game title and genre, then it will suggest results close to the user's input. Would love to keep it as simple as possible, but also wanted to add a function where the user can add to a favorites list and have to option to edit that list by adding or deleting elements or games.
