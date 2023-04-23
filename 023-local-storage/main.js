@@ -3,7 +3,22 @@ const ERR = document.getElementById("err");
 const AVG_OUTPUT = document.getElementById("output-avg");
 const TBL_OUTPUT = document.getElementById("table-out");
 
-const MY_DATA = [];
+function getTripData() {
+  const tripDataJSON = localStorage.getItem('tripdata')
+  if(tripDataJSON !== null) {
+    return JSON.parse(tripDataJSON)
+  } else {
+    return []
+  }
+}
+
+const MY_DATA = getTripData()
+renderTable()
+
+function createItem() {
+  localStorage.setItem('tripdata', JSON.stringify(MY_DATA))
+
+}
 
 function updateDOM(input, id) {
   const divEl = document.querySelector(id);
@@ -93,7 +108,7 @@ function renderEditDelBtn(index) {
     MY_DATA.splice(index, 1);
     renderTable();
   });
-
+  
   td.appendChild(editBtn);
   td.appendChild(delBtn);
   return td;
