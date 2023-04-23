@@ -4,21 +4,20 @@ const AVG_OUTPUT = document.getElementById("output-avg");
 const TBL_OUTPUT = document.getElementById("table-out");
 
 function getTripData() {
-  const tripDataJSON = localStorage.getItem('tripdata')
-  if(tripDataJSON !== null) {
-    return JSON.parse(tripDataJSON)
+  const tripDataJSON = localStorage.getItem("tripdata");
+  if (tripDataJSON !== null) {
+    return JSON.parse(tripDataJSON);
   } else {
-    return []
+    return [];
   }
 }
 
-const MY_DATA = getTripData()
-renderTable()
-
-function createItem() {
-  localStorage.setItem('tripdata', JSON.stringify(MY_DATA))
-
+function saveTripData() {
+  localStorage.setItem("tripdata", JSON.stringify(MY_DATA));
 }
+
+const MY_DATA = getTripData();
+renderTable();
 
 function updateDOM(input, id) {
   const divEl = document.querySelector(id);
@@ -106,9 +105,10 @@ function renderEditDelBtn(index) {
   });
   delBtn.addEventListener("click", function (e) {
     MY_DATA.splice(index, 1);
+    saveTripData();
     renderTable();
   });
-  
+
   td.appendChild(editBtn);
   td.appendChild(delBtn);
   return td;
@@ -144,6 +144,7 @@ FORM.addEventListener("submit", (e) => {
     AVG_OUTPUT.textContent = "";
     const dataObj = trackMPGandCost(miles, gallons, price);
     MY_DATA.push(dataObj);
+    saveTripData();
     renderTable();
     calculateAvg();
   }
