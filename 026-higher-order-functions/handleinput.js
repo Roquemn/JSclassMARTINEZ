@@ -1,4 +1,5 @@
 const ERR = document.getElementById("err");
+const AVG_OUTPUT = document.getElementById("output-avg");
 
 function updateDOM(input, id) {
   const divEl = document.querySelector(id);
@@ -20,21 +21,16 @@ function trackMPGandCost(miles, gallons, price) {
 }
 
 function calculateAvg(MY_DATA) {
+AVG_OUTPUT.innerHTML = ''
   const numberOfObj = MY_DATA.length;
-  // let sumMPG = 0;
-  // let sumTripCost = 0;
-  // MY_DATA.forEach(obj => {
-  //     sumMPG += obj.MPG;
-  //     sumTripCost += obj.tripCost;
-  // });
   const sums = MY_DATA.reduce(function (sum, obj) {
     return {
-      MPG: sum + obj.MPG,
+      MPG: sum.MPG + obj.MPG,
       tripCost: sum.tripCost + obj.tripCost,
     };
   });
-  const avgMPG = Number((sumMPG / numberOfObj).toFixed(2));
-  const avgTripCost = Number((sumTripCost / numberOfObj).toFixed(2));
+  const avgMPG = Number((sums.MPG / numberOfObj).toFixed(2));
+  const avgTripCost = Number((sums.tripCost / numberOfObj).toFixed(2));
   updateDOM(`Average MPG is ${avgMPG}`, "#output-avg");
   updateDOM(`Average Trip Cost is ${avgTripCost}`, "#output-avg");
 }
