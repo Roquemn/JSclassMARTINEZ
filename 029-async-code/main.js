@@ -30,7 +30,7 @@ function thing2 (callback) {
     // Order the Pizza 
     callback()
 }
-function thing3 (callback) {
+function thing3 () {
     // Eat the Pizza
     callback()
 }
