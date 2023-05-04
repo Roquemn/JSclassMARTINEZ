@@ -8,3 +8,7 @@ Still getting used to this new approach but do like it.
 
 the way I look at it, it feels like giving attributes to a class.
 
+### What did you try to fix the code?
+
+just tried adding the setters and getter for the last name and address
+
