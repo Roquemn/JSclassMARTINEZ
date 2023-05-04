@@ -21,16 +21,16 @@ function trackMPGandCost(miles, gallons, price) {
 }
 
 function calculateAvg(MY_DATA) {
-AVG_OUTPUT.innerHTML = ''
+  AVG_OUTPUT.innerHTML = "";
   const numberOfObj = MY_DATA.length;
   const sums = MY_DATA.reduce(function (sum, obj) {
     return {
-      MPG: sum.MPG + obj.MPG,
-      tripCost: sum.tripCost + obj.tripCost,
+      _MPG: sum._MPG + obj._MPG,
+      _tripCost: sum._tripCost + obj._tripCost,
     };
   });
-  const avgMPG = Number((sums.MPG / numberOfObj).toFixed(2));
-  const avgTripCost = Number((sums.tripCost / numberOfObj).toFixed(2));
+  const avgMPG = Number((sums._MPG / numberOfObj).toFixed(2));
+  const avgTripCost = Number((sums._tripCost / numberOfObj).toFixed(2));
   updateDOM(`Average MPG is ${avgMPG}`, "#output-avg");
   updateDOM(`Average Trip Cost is ${avgTripCost}`, "#output-avg");
 }
