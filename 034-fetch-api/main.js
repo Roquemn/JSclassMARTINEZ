@@ -1,10 +1,22 @@
-const url =
-  "https://api.thenewsapi.com/v1/news/top";
+const url = "https://banana.pudding";
 
+const request = new Request(url, {
+  headers: {
+    Authorization: "Bearer 123",
+  },
+});
 async function getData() {
-  const response = await fetch(url);
-  const data = await response.json();
-  console.log(data);
+  try {
+    const response = await fetch(request);
+    const data = await response.json();
+    if (response.status !== 200) {
+      console.log("Success", data);
+    } else {
+      console.log("Server Error", data.error.message);
+    }
+  } catch (error) {
+    console.log("Fetch Error", error);
+  }
 }
 
 getData();
